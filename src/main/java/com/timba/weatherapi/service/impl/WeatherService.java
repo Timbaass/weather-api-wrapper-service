@@ -4,6 +4,7 @@ import com.timba.weatherapi.config.WeatherConfig;
 import com.timba.weatherapi.domains.WeatherResponse;
 import com.timba.weatherapi.service.IWeatherService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,6 +17,7 @@ public class WeatherService implements IWeatherService {
     private final WeatherConfig weatherConfig;
 
     @Override
+    @Cacheable(value = "weather", key = "#city")
     public WeatherResponse getWeatherData(String city) {
         String date = LocalDate.now().toString();
 
