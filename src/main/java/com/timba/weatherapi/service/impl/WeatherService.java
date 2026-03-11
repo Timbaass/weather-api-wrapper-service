@@ -2,10 +2,12 @@ package com.timba.weatherapi.service.impl;
 
 import com.timba.weatherapi.config.WeatherConfig;
 import com.timba.weatherapi.domains.WeatherResponse;
+import com.timba.weatherapi.exception.CityNotFoundException;
 import com.timba.weatherapi.service.IWeatherService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
@@ -27,5 +29,10 @@ public class WeatherService implements IWeatherService {
                 date,
                 weatherConfig.getKey());
 
-        return restTemplate.getForObject(url, WeatherResponse.class);    }
+        try {
+            return restTemplate.getForObject(url, WeatherResponse.class);
+        } catch (HttpClientErrorException e) {
+            throw new CityNotFoundException("City not found: " + city);
+        }
+    }
 }
