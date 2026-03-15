@@ -1,6 +1,7 @@
 package com.timba.weatherapi.service.impl;
 
 import com.timba.weatherapi.config.WeatherConfig;
+import com.timba.weatherapi.domains.dto.FavoriteCityResponse;
 import com.timba.weatherapi.domains.dto.WeatherResponse;
 import com.timba.weatherapi.exception.CityNotFoundException;
 import com.timba.weatherapi.service.IWeatherService;
@@ -34,5 +35,20 @@ public class WeatherService implements IWeatherService {
         } catch (HttpClientErrorException e) {
             throw new CityNotFoundException("City not found: " + city);
         }
+    }
+
+    @Override
+    public FavoriteCityResponse getFavoriteCities() {
+        return null;
+    }
+
+    @Override
+    public FavoriteCityResponse addFavoriteCity() {
+        return null;
+    }
+
+    @Override
+    public void deleteFavoriteCity() {
+
     }
 }
