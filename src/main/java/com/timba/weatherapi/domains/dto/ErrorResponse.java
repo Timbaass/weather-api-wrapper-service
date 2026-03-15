@@ -1,4 +1,4 @@
-package com.timba.weatherapi.domains;
+package com.timba.weatherapi.domains.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

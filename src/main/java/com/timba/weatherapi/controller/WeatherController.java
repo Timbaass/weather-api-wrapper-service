@@ -1,6 +1,6 @@
 package com.timba.weatherapi.controller;
 
-import com.timba.weatherapi.domains.WeatherResponse;
+import com.timba.weatherapi.domains.dto.WeatherResponse;
 import com.timba.weatherapi.service.IWeatherService;
 import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;

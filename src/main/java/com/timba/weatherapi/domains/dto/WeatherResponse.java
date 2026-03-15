@@ -1,4 +1,4 @@
-package com.timba.weatherapi.domains;
+package com.timba.weatherapi.domains.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 

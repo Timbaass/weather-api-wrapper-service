@@ -1,6 +1,6 @@
 package com.timba.weatherapi.config;
 
-import com.timba.weatherapi.domains.WeatherResponse;
+import com.timba.weatherapi.domains.dto.WeatherResponse;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;

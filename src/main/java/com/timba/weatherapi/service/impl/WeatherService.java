@@ -1,7 +1,7 @@
 package com.timba.weatherapi.service.impl;
 
 import com.timba.weatherapi.config.WeatherConfig;
-import com.timba.weatherapi.domains.WeatherResponse;
+import com.timba.weatherapi.domains.dto.WeatherResponse;
 import com.timba.weatherapi.exception.CityNotFoundException;
 import com.timba.weatherapi.service.IWeatherService;
 import lombok.RequiredArgsConstructor;

@@ -2,7 +2,7 @@ package com.timba.weatherapi.controllerTest;
 
 
 import com.timba.weatherapi.controller.WeatherController;
-import com.timba.weatherapi.domains.WeatherResponse;
+import com.timba.weatherapi.domains.dto.WeatherResponse;
 import com.timba.weatherapi.service.IWeatherService;
 import org.junit.jupiter.api.Test;
 

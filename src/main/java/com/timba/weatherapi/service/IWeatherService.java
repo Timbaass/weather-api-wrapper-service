@@ -1,6 +1,6 @@
 package com.timba.weatherapi.service;
 
-import com.timba.weatherapi.domains.WeatherResponse;
+import com.timba.weatherapi.domains.dto.WeatherResponse;
 
 public interface IWeatherService {
     WeatherResponse getWeatherData(String city);
