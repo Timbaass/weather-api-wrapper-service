@@ -7,6 +7,7 @@ import com.timba.weatherapi.service.IWeatherService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,16 +29,19 @@ public class WeatherController {
 
     @PostMapping("/favorites")
     public ResponseEntity<FavoriteCityResponse> addFavoriteCity(@Valid @RequestBody FavoriteCityRequest request){
-        return null;
+        FavoriteCityResponse response = weatherService.addFavoriteCity(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @GetMapping("/favorites")
     public ResponseEntity<List<FavoriteCityResponse>> getFavoriteCities(){
-        return null;
+        List<FavoriteCityResponse> response = weatherService.getFavoriteCities();
+        return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
     @DeleteMapping("/favorites/{id}")
     public ResponseEntity<Void> deleteFavoriteCity(@PathVariable UUID id){
-        return null;
+        weatherService.deleteFavoriteCity(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }
