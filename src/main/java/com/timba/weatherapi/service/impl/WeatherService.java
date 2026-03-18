@@ -49,7 +49,10 @@ public class WeatherService implements IWeatherService {
     @Override
     public List<FavoriteCityResponse> getFavoriteCities() {
         List<CityEntity> cities = cityRepository.findAll();
-        return null;
+
+        return cities.stream()
+                .map(cityMapper::toResponse)
+                .toList();
     }
 
     @Override
