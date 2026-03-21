@@ -61,6 +61,8 @@ public class WeatherService implements IWeatherService {
             throw new ThreeFavoriteCityOnlyException();
         }
 
+        this.getWeatherData(request.getCityName());
+
         CityEntity city = cityMapper.toEntity(request);
 
         CityEntity addedCity = cityRepository.save(city);
